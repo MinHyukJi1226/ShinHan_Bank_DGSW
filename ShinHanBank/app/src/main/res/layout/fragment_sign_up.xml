@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/idLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/signUpId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpIdEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="12"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@id/signUpId"
+                app:layout_constraintTop_toBottomOf="@id/signUpId" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/idDoubleCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_blue"
+                android:text="@string/doubleCheck"
+                app:layout_constraintBottom_toBottomOf="@id/signUpIdEditText"
+                app:layout_constraintStart_toEndOf="@id/signUpIdEditText"
+                app:layout_constraintTop_toTopOf="@id/signUpIdEditText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pwLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idLayout">
+
+            <TextView
+                android:id="@+id/signUpPw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/pw"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpPwEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="12"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="@id/signUpPw"
+                app:layout_constraintTop_toBottomOf="@id/signUpPw" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pwDoubleCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_blue"
+                android:text="@string/doubleCheck"
+                app:layout_constraintBottom_toBottomOf="@id/signUpPwEditText"
+                app:layout_constraintStart_toEndOf="@id/signUpPwEditText"
+                app:layout_constraintTop_toTopOf="@id/signUpPwEditText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pwLayout">
+
+            <TextView
+                android:id="@+id/signUpEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="10dp"
+                android:ems="12"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="@id/signUpEmail"
+                app:layout_constraintTop_toBottomOf="@id/signUpEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/residentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailLayout">
+
+            <TextView
+                android:id="@+id/signUpResident"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/Resident"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpResidentEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="10dp"
+                android:ems="6"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="@id/signUpResident"
+                app:layout_constraintTop_toBottomOf="@id/signUpResident" />
+
+            <TextView
+                android:id="@+id/hyphen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/hyphen"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@id/signUpResidentEditText"
+                app:layout_constraintStart_toEndOf="@id/signUpResidentEditText"
+                app:layout_constraintTop_toTopOf="@id/signUpResidentEditText" />
+
+            <EditText
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ems="1"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@id/hyphen"
+                app:layout_constraintStart_toEndOf="@id/hyphen"
+                app:layout_constraintTop_toTopOf="@id/hyphen" />
+
+            <TextView
+                android:id="@+id/blank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:text="* * * * * *"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@id/gender"
+                app:layout_constraintStart_toEndOf="@id/gender"
+                app:layout_constraintTop_toTopOf="@id/gender" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/residentLayout">
+
+            <TextView
+                android:id="@+id/signUpName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="10dp"
+                android:ems="12"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@id/signUpName"
+                app:layout_constraintTop_toBottomOf="@id/signUpName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nickNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameLayout">
+
+            <TextView
+                android:id="@+id/signUpNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/NickName"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/signUpNickNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="12"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@id/signUpNickName"
+                app:layout_constraintTop_toBottomOf="@id/signUpNickName" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/NickNameDoubleCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_blue"
+                android:text="@string/doubleCheck"
+                app:layout_constraintBottom_toBottomOf="@id/signUpNickNameEditText"
+                app:layout_constraintStart_toEndOf="@id/signUpNickNameEditText"
+                app:layout_constraintTop_toTopOf="@id/signUpNickNameEditText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nickNameLayout">
+
+            <TextView
+                android:id="@+id/signUpProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:text="@string/profile"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SelectPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="44dp"
+                android:background="@drawable/button_blue"
+                android:text="@string/SelectPicture"
+                app:layout_constraintBottom_toBottomOf="@id/signUpProfile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/signUpProfile"
+                app:layout_constraintVertical_bias="0.392" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/termsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileLayout">
+
+            <RadioButton
+                android:id="@+id/radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/signUpTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:text="@string/Terms"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/radio"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_blue"
+                android:paddingHorizontal="70dp"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/button_blue"
+                android:paddingHorizontal="70dp"
+                android:text="확인"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

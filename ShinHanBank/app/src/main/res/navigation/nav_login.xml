@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.hmj.shinhanbank.Fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.hmj.shinhanbank.Fragment.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signInWithIdPwFragment"
+            app:destination="@id/signInWithIdPwFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_authNumberFragment"
+            app:destination="@id/authNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.hmj.shinhanbank.Fragment.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_authNumberFragment"
+            app:destination="@id/authNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authNumberFragment"
+        android:name="com.hmj.shinhanbank.Fragment.AuthNumberFragment"
+        android:label="fragment_auth_number"
+        tools:layout="@layout/fragment_auth_number" />
+    <fragment
+        android:id="@+id/signInWithIdPwFragment"
+        android:name="com.hmj.shinhanbank.Fragment.SignInWithIdPwFragment"
+        android:label="fragment_sign_in_with_id_pw"
+        tools:layout="@layout/fragment_sign_in_with_id_pw" />
+</navigation>
