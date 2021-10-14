@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.hmj.shinhanbank.Fragment.LoginFragment"
+        android:name="com.hmj.shinhanbank.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.hmj.shinhanbank.Fragment.SignInFragment"
+        android:name="com.hmj.shinhanbank.fragment.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in">
         <action
@@ -31,21 +31,28 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.hmj.shinhanbank.Fragment.SignUpFragment"
+        android:name="com.hmj.shinhanbank.fragment.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_authNumberFragment"
             app:destination="@id/authNumberFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/authNumberFragment"
-        android:name="com.hmj.shinhanbank.Fragment.AuthNumberFragment"
+        android:name="com.hmj.shinhanbank.fragment.AuthNumberFragment"
         android:label="fragment_auth_number"
-        tools:layout="@layout/fragment_auth_number" />
+        tools:layout="@layout/fragment_auth_number" >
+        <argument
+            android:name="state"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/signInWithIdPwFragment"
-        android:name="com.hmj.shinhanbank.Fragment.SignInWithIdPwFragment"
+        android:name="com.hmj.shinhanbank.fragment.SignInWithIdPwFragment"
         android:label="fragment_sign_in_with_id_pw"
         tools:layout="@layout/fragment_sign_in_with_id_pw" />
 </navigation>
