@@ -49,10 +49,22 @@
         <argument
             android:name="state"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_authNumberFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInWithIdPwFragment"
         android:name="com.hmj.shinhanbank.fragment.SignInWithIdPwFragment"
         android:label="fragment_sign_in_with_id_pw"
-        tools:layout="@layout/fragment_sign_in_with_id_pw" />
+        tools:layout="@layout/fragment_sign_in_with_id_pw" >
+        <action
+            android:id="@+id/action_signInWithIdPwFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hmj.shinhanbank.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
