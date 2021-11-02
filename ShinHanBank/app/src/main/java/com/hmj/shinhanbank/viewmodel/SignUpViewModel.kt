@@ -33,4 +33,20 @@ class SignUpViewModel: ViewModel() {
             }
         })
     }
+
+    fun overlapId(id: String) {
+        loginService.overlapId(id).enqueue(object : Callback<Msg> {
+            override fun onResponse(call: Call<Msg>, response: Response<Msg>) {
+                if (response.isSuccessful) {
+                    signUpLiveData.postValue(response.body())
+                } else {
+                    errorLiveData.postValue(response.errorBody()?.string())
+                }
+            }
+
+            override fun onFailure(call: Call<Msg>, t: Throwable) {
+                signUpLiveData.postValue(null)
+            }
+        })
+    }
 }

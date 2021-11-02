@@ -10,17 +10,20 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface LoginService {
-//    @GET("signup/id")
 
     @POST("/signup")
     fun signup(@Body signUpRequest: SignUpRequest): Call<Msg>
 
+    @GET("/signup/id/{id}")
+    fun overlapId(@Query("id") id: String) : Call<Msg>
+
     @POST("/signup/quick")
-    fun signUpAuthNum(@Body signUpAuthNumRequest: SignUpAuthNumRequest) : Call<Msg>
+    fun signUpAuthNum(@Body signUpAuthNumRequest: SignUpAuthNumRequest): Call<Msg>
 
     @POST("/login")
     fun login(@Body loginRequest: LoginRequest): Call<Msg>
 
     @POST("/login/quick")
     fun loginAuthNum(@Body loginAuthNumRequest: LoginAuthNumRequest): Call<Msg>
+    
 }
