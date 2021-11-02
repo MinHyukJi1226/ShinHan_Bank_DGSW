@@ -97,7 +97,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/emailLayout"
+            android:id="@+id/phoneNumLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -105,27 +105,27 @@
             app:layout_constraintTop_toBottomOf="@id/pwLayout">
 
             <TextView
-                android:id="@+id/signUpEmail"
+                android:id="@+id/signUpPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/email"
+                android:text="@string/phoneNumber"
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/signUpEmailEditText"
+                android:id="@+id/signUpPhoneEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="22dp"
                 android:layout_marginTop="10dp"
                 android:ems="12"
                 android:inputType="textEmailAddress"
-                app:layout_constraintStart_toStartOf="@id/signUpEmail"
-                app:layout_constraintTop_toBottomOf="@id/signUpEmail" />
+                app:layout_constraintStart_toStartOf="@id/signUpPhone"
+                app:layout_constraintTop_toBottomOf="@id/signUpPhone" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/emailLayout">
+            app:layout_constraintTop_toBottomOf="@id/phoneNumLayout">
 
             <TextView
                 android:id="@+id/signUpResident"
