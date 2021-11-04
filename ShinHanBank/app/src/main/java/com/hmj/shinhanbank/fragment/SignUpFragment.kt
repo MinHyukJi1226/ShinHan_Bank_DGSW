@@ -33,11 +33,13 @@ class SignUpFragment : Fragment() {
         binding.idDoubleCheck.setOnClickListener {
             viewModel.overlapId(binding.signUpIdEditText.text.toString())
             viewModel.signUpLiveData.observe(viewLifecycleOwner, {
-                if (it.equals("exist")) {
+                if (it.msg == "exist") {
                     Toast.makeText(requireContext(), "이미 있는 ID 입니다.", Toast.LENGTH_SHORT).show()
-                } else if (it.equals("available")) {
+                } else if (it.msg == "available") {
                     Toast.makeText(requireContext(), "사용 할 수 있는 ID 입니다.", Toast.LENGTH_SHORT).show()
                     isExist = true
+                } else if (it.msg == null) {
+                    Toast.makeText(requireContext(), "왜 null임?", Toast.LENGTH_SHORT).show()
                 }
             })
         }
@@ -72,6 +74,7 @@ class SignUpFragment : Fragment() {
 
     private fun observe() {
         viewModel.signUp(signUpRequest())
+        viewModel.signUpMultiPart()
     }
 
     private fun signUpRequest() = SignUpRequest(
