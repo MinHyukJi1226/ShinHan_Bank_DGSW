@@ -75,24 +75,14 @@
 
             <EditText
                 android:id="@+id/signUpPwEditText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
                 android:layout_marginTop="10dp"
                 android:ems="12"
                 android:inputType="textPassword"
                 app:layout_constraintStart_toStartOf="@id/signUpPw"
                 app:layout_constraintTop_toBottomOf="@id/signUpPw" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/pwDoubleCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/button_blue"
-                android:text="@string/doubleCheck"
-                app:layout_constraintBottom_toBottomOf="@id/signUpPwEditText"
-                app:layout_constraintStart_toEndOf="@id/signUpPwEditText"
-                app:layout_constraintTop_toTopOf="@id/signUpPwEditText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
