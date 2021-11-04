@@ -41,7 +41,7 @@ class AuthNumberFragment : Fragment() {
         val signUpRequest = SignUpAuthNumRequest(authNum())
         viewModel.signUpAuth(signUpRequest)
         viewModel.authLiveData.observe(viewLifecycleOwner, {
-            if (!it.equals("fail")) {
+            if (!it.msg.equals("fail")) {
                 Toast.makeText(requireContext(), "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show()
                 toMain()
             }
@@ -52,7 +52,7 @@ class AuthNumberFragment : Fragment() {
         val loginAuthNumRequest = LoginAuthNumRequest(authNum())
         viewModel.signInAuth(loginAuthNumRequest)
         viewModel.authLiveData.observe(viewLifecycleOwner, {
-            if (!it.equals("fail")) {
+            if (!it.msg.equals("fail")) {
                 Toast.makeText(requireContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show()
                 toMain()
             }
