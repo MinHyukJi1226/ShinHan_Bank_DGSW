@@ -4,6 +4,7 @@ import com.hmj.shinhanbank.network.dao.LoginService
 import com.hmj.shinhanbank.util.TokenInterceptor
 import okhttp3.OkHttpClient
 import com.google.gson.Gson
+import com.hmj.shinhanbank.network.dao.AccountService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -23,4 +24,5 @@ object RetrofitInstance {
     }
 
     val loginService: LoginService = retrofit.create(LoginService::class.java)
+    val accountService: AccountService = retrofit.create(AccountService::class.java)
 }
