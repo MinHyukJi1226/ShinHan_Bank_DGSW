@@ -14,6 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.hmj.shinhanbank.databinding.FragmentSignUpBinding
 import com.hmj.shinhanbank.network.dto.Request.SignUpRequest
+import com.hmj.shinhanbank.util.PreferenceUtils
 import com.hmj.shinhanbank.viewmodel.SignUpViewModel
 
 class SignUpFragment : Fragment() {
@@ -75,6 +76,13 @@ class SignUpFragment : Fragment() {
     private fun observe() {
         viewModel.signUp(signUpRequest())
         viewModel.signUpMultiPart()
+        viewModel.signUpLiveData.observe(viewLifecycleOwner, {
+            if (it != null) {
+                if (it.msg != "fail") {
+                    PreferenceUtils.token = it.msg
+                }
+            }
+        })
     }
 
     private fun signUpRequest() = SignUpRequest(
