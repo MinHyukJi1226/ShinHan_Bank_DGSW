@@ -4,6 +4,7 @@ import com.hmj.shinhanbank.network.dto.Request.LoginAuthNumRequest
 import com.hmj.shinhanbank.network.dto.Request.LoginRequest
 import com.hmj.shinhanbank.network.dto.Request.SignUpAuthNumRequest
 import com.hmj.shinhanbank.network.dto.Request.SignUpRequest
+import com.hmj.shinhanbank.network.dto.Response.GetProfile
 import com.hmj.shinhanbank.network.dto.Response.Msg
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -18,6 +19,9 @@ interface LoginService {
     @Multipart
     @POST("/signup")
     fun signUpMultipart(@Part("content") content: RequestBody, @Part attachment: MultipartBody.Part) : Call<Msg>
+
+    @GET("/signup")
+    fun getProfile(): Call<GetProfile>
 
     @GET("/signup/id/{id}")
     fun overlapId(@Query("id") id: String) : Call<Msg>
