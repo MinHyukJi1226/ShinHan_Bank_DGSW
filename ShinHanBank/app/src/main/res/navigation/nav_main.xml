@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hmj.shinhanbank.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_informationCheckFragment"
+            app:destination="@id/informationCheckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informationCheckFragment"
+        android:name="com.hmj.shinhanbank.fragment.InformationCheckFragment"
+        android:label="fragment_information_check"
+        tools:layout="@layout/fragment_information_check" >
+        <argument
+            android:name="state"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_informationCheckFragment_to_accountNickNameFragment"
+            app:destination="@id/accountNickNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountNickNameFragment"
+        android:name="com.hmj.shinhanbank.fragment.AccountNickNameFragment"
+        android:label="fragment_account_nick_name"
+        tools:layout="@layout/fragment_account_nick_name" >
+        <action
+            android:id="@+id/action_accountNickNameFragment_to_accountPasswordFragment"
+            app:destination="@id/accountPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountPasswordFragment"
+        android:name="com.hmj.shinhanbank.fragment.AccountPasswordFragment"
+        android:label="fragment_account_password"
+        tools:layout="@layout/fragment_account_password" >
+        <argument
+            android:name="nickname"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_accountPasswordFragment_to_createAccountSuccessFragment"
+            app:destination="@id/createAccountSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountSuccessFragment"
+        android:name="com.hmj.shinhanbank.fragment.CreateAccountSuccessFragment"
+        android:label="fragment_create_account_success"
+        tools:layout="@layout/fragment_create_account_success" >
+        <action
+            android:id="@+id/action_createAccountSuccessFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
