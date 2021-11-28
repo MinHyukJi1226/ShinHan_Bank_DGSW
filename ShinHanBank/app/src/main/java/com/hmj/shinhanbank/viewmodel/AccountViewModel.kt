@@ -16,7 +16,7 @@ import retrofit2.Response
 class AccountViewModel : ViewModel() {
     
     val msg: MutableLiveData<Msg> = MutableLiveData()
-    private val accountLiveData: MutableLiveData<List<HoldAccount>> = MutableLiveData()
+    val accountLiveData: MutableLiveData<List<HoldAccount>> = MutableLiveData()
     
     private val accountService by lazy { RetrofitInstance.accountService }
     
