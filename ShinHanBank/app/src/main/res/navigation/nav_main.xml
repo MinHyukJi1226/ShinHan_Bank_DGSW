@@ -11,6 +11,9 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
+            android:id="@+id/action_mainFragment_to_accountDetailFragment"
+            app:destination="@id/accountDetailFragment" />
+        <action
             android:id="@+id/action_mainFragment_to_informationCheckFragment"
             app:destination="@id/informationCheckFragment" />
     </fragment>
@@ -25,6 +28,9 @@
         <action
             android:id="@+id/action_informationCheckFragment_to_accountNickNameFragment"
             app:destination="@id/accountNickNameFragment" />
+        <action
+            android:id="@+id/action_informationCheckFragment_to_myAccountListFragment"
+            app:destination="@id/myAccountListFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountNickNameFragment"
@@ -55,5 +61,71 @@
         <action
             android:id="@+id/action_createAccountSuccessFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAccountListFragment"
+        android:name="com.hmj.shinhanbank.fragment.MyAccountListFragment"
+        android:label="fragment_my_account_list"
+        tools:layout="@layout/fragment_my_account_list" >
+        <action
+            android:id="@+id/action_myAccountListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMoneyFragment"
+        android:name="com.hmj.shinhanbank.fragment.SendMoneyFragment"
+        android:label="fragment_send_money"
+        tools:layout="@layout/fragment_send_money" >
+        <action
+            android:id="@+id/action_sendMoneyFragment_to_sendAccountCheckFragment"
+            app:destination="@id/sendAccountCheckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendAccountCheckFragment"
+        android:name="com.hmj.shinhanbank.fragment.SendAccountCheckFragment"
+        android:label="fragment_send_account_check"
+        tools:layout="@layout/fragment_send_account_check" >
+        <action
+            android:id="@+id/action_sendAccountCheckFragment_to_sendAccountPasswordFragment"
+            app:destination="@id/sendAccountPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendAccountPasswordFragment"
+        android:name="com.hmj.shinhanbank.fragment.SendAccountPasswordFragment"
+        android:label="fragment_send_account_password"
+        tools:layout="@layout/fragment_send_account_password" >
+        <action
+            android:id="@+id/action_sendAccountPasswordFragment_to_sendAccountSuccessFragment"
+            app:destination="@id/sendAccountSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendAccountSuccessFragment"
+        android:name="com.hmj.shinhanbank.fragment.SendAccountSuccessFragment"
+        android:label="fragment_send_account_success"
+        tools:layout="@layout/fragment_send_account_success" />
+    <fragment
+        android:id="@+id/holdMoneyFragment"
+        android:name="com.hmj.shinhanbank.fragment.HoldMoneyFragment"
+        android:label="fragment_hold_money"
+        tools:layout="@layout/fragment_hold_money" />
+    <fragment
+        android:id="@+id/holdAccountPasswordFragment"
+        android:name="com.hmj.shinhanbank.fragment.HoldAccountPasswordFragment"
+        android:label="fragment_hold_account_password"
+        tools:layout="@layout/fragment_hold_account_password" />
+    <fragment
+        android:id="@+id/accountDetailFragment"
+        android:name="com.hmj.shinhanbank.fragment.AccountDetailFragment"
+        android:label="fragment_account_detail"
+        tools:layout="@layout/fragment_account_detail" >
+        <action
+            android:id="@+id/action_accountDetailFragment_to_informationCheckFragment"
+            app:destination="@id/informationCheckFragment" />
+        <action
+            android:id="@+id/action_accountDetailFragment_to_sendMoneyFragment"
+            app:destination="@id/sendMoneyFragment" />
+        <action
+            android:id="@+id/action_accountDetailFragment_to_holdMoneyFragment"
+            app:destination="@id/holdMoneyFragment" />
     </fragment>
 </navigation>

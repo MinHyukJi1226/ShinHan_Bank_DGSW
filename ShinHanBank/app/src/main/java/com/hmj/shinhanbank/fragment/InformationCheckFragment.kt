@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.hmj.shinhanbank.R
 import com.hmj.shinhanbank.databinding.FragmentInformationCheckBinding
@@ -31,14 +32,15 @@ class InformationCheckFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         when (args.state) {
             1 -> createAccount()
+            2 -> addAccount()
         }
     }
     
     private fun createAccount() {
         binding.checkButton.text = "확인"
         binding.nextButton.text = "다음"
-        binding.title.text = "실명정보 확인을 위해 \n이름과 주민등록 번호를 \n입력하세요"
-        if (binding.nameEditText.text.toString().isNotEmpty() || binding.numberEditText.text.toString().isNotEmpty()) {
+        binding.title.text = "실명정보 확인을 위해 \n이름과 주민등록번호를 \n입력하세요"
+        if (binding.nameEditText.text.toString().isNotEmpty() && binding.numberEditText.text.toString().isNotEmpty()) {
             binding.checkButton.isEnabled = true
         }
         binding.checkButton.setOnClickListener {
@@ -60,7 +62,15 @@ class InformationCheckFragment : Fragment() {
         }
 
         binding.nextButton.setOnClickListener {
+            findNavController().navigate(InformationCheckFragmentDirections.actionInformationCheckFragmentToAccountNickNameFragment())
+        }
+    }
 
+    private fun addAccount() {
+        binding.checkButton.text = "조회하기"
+        binding.title.text = "추가할 은행 확인을 위해\n이름과 주민등록번호를 입력하세요"
+        binding.checkButton.setOnClickListener {
+            findNavController().navigate(InformationCheckFragmentDirections.actionInformationCheckFragmentToMyAccountListFragment())
         }
     }
 }

@@ -11,12 +11,27 @@ import com.hmj.shinhanbank.network.dto.Response.HoldAccount
 class RecyclerViewMainAdapter: RecyclerView.Adapter<RecyclerViewMainAdapter.ViewHolder>() {
 
     private val data = mutableListOf<HoldAccount>()
+    private lateinit var mListener: OnItemClickListener
+
+    interface OnItemClickListener {
+        fun onClick(id: Int)
+    }
+
+    fun setOnItemClickListener(listener: (Int) -> Unit) {
+        mListener = object : OnItemClickListener {
+            override fun onClick(id: Int) {
+                listener(id)
+            }
+        }
+    }
 
     fun setData(data: List<HoldAccount>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
     }
+
+
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val accountName = view.findViewById<TextView>(R.id.item_account_name)
